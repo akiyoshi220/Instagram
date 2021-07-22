@@ -1,3 +1,7 @@
 Pods/*
 Instagram.scworkspace
 GoogleService-Info.plist
+
+xcuserdata/
+**/xcshareddata/WorkspaceSettings.xcsettings
+

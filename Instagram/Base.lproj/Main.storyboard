@@ -15,10 +15,25 @@
                     <view key="view" contentMode="scaleToFill" id="rb0-3f-arD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vVn-um-cgt">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="NGG-WV-Fpd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NGG-WV-Fpd" firstAttribute="trailing" secondItem="vVn-um-cgt" secondAttribute="trailing" id="7Jx-gY-y34"/>
+                            <constraint firstItem="vVn-um-cgt" firstAttribute="top" secondItem="NGG-WV-Fpd" secondAttribute="top" id="9Qh-aP-d6X"/>
+                            <constraint firstItem="vVn-um-cgt" firstAttribute="leading" secondItem="NGG-WV-Fpd" secondAttribute="leading" id="Pf8-dw-fX7"/>
+                            <constraint firstItem="NGG-WV-Fpd" firstAttribute="bottom" secondItem="vVn-um-cgt" secondAttribute="bottom" id="wri-Al-DFu"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="ホーム" image="home" id="zWk-rs-Rou"/>
+                    <connections>
+                        <outlet property="tableView" destination="vVn-um-cgt" id="rDu-iJ-VwC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r5q-eC-zoj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
