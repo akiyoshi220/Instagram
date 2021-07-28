@@ -33,6 +33,7 @@
                     <tabBarItem key="tabBarItem" title="ホーム" image="home" id="zWk-rs-Rou"/>
                     <connections>
                         <outlet property="tableView" destination="vVn-um-cgt" id="rDu-iJ-VwC"/>
+                        <segue destination="xEe-Rl-88E" kind="show" identifier="addComment" id="gDb-SO-5RM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r5q-eC-zoj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -151,6 +152,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zXK-ew-hQc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="997" y="860"/>
+        </scene>
+        <!--Add Comment View Controller-->
+        <scene sceneID="uvx-vZ-zRA">
+            <objects>
+                <viewController id="xEe-Rl-88E" customClass="AddCommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="862-M1-vMn" customClass="ADd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QNR-jJ-HRx">
+                                <rect key="frame" x="10" y="41" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="コメントの入力" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbd-Lh-WN4">
+                                <rect key="frame" x="10" y="10" width="394" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7W1-24-p0y">
+                                <rect key="frame" x="57" y="85" width="300" height="40"/>
+                                <state key="normal" title="登録" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="handleRegistButton:" destination="xEe-Rl-88E" eventType="touchUpInside" id="0Mn-LW-uJK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="exn-Je-V72"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7W1-24-p0y" firstAttribute="centerX" secondItem="862-M1-vMn" secondAttribute="centerX" id="1nX-BB-k24"/>
+                            <constraint firstItem="dbd-Lh-WN4" firstAttribute="leading" secondItem="exn-Je-V72" secondAttribute="leading" constant="10" id="P9D-8v-GNY"/>
+                            <constraint firstItem="QNR-jJ-HRx" firstAttribute="leading" secondItem="exn-Je-V72" secondAttribute="leading" constant="10" id="Rkc-Rk-AHg"/>
+                            <constraint firstItem="exn-Je-V72" firstAttribute="trailing" secondItem="QNR-jJ-HRx" secondAttribute="trailing" constant="10" id="Xaa-JH-Bpf"/>
+                            <constraint firstItem="dbd-Lh-WN4" firstAttribute="centerX" secondItem="862-M1-vMn" secondAttribute="centerX" id="Yv3-V2-2OA"/>
+                            <constraint firstItem="QNR-jJ-HRx" firstAttribute="top" secondItem="dbd-Lh-WN4" secondAttribute="bottom" constant="10" id="eRH-vz-W7o"/>
+                            <constraint firstItem="QNR-jJ-HRx" firstAttribute="centerX" secondItem="862-M1-vMn" secondAttribute="centerX" id="fri-R2-Sde"/>
+                            <constraint firstItem="7W1-24-p0y" firstAttribute="top" secondItem="QNR-jJ-HRx" secondAttribute="bottom" constant="10" id="p8e-vQ-a9t"/>
+                            <constraint firstItem="dbd-Lh-WN4" firstAttribute="top" secondItem="exn-Je-V72" secondAttribute="top" constant="10" id="zfI-nA-s4i"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="GEc-vN-azB"/>
+                    <connections>
+                        <outlet property="commentField" destination="QNR-jJ-HRx" id="pLq-8k-jDa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g4v-EW-FYN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-830.43478260869574" y="1635.9375"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="5W1-qy-8Az">
@@ -298,7 +349,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="RL3-3l-BK9">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="bqu-tf-otv" customClass="TabBarController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="bqu-tf-otv" customClass="TabBarController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cdH-7n-CVn">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

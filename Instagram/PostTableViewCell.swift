@@ -11,10 +11,12 @@ import FirebaseUI
 class PostTableViewCell: UITableViewCell {
 
     @IBOutlet weak var postImageView: UIImageView!
-    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var likeButton: UIButton!	
+    @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var commentLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -58,5 +60,17 @@ class PostTableViewCell: UITableViewCell {
             let buttonImage = UIImage(named: "like_none")
             self.likeButton.setImage(buttonImage, for: .normal)
         }
+        var cm: String = ""
+        for comment:[String:String] in postData.comments {
+            if let n:String = comment["name"] {
+                cm += n
+                if let c:String = comment["comment"] {
+                    cm += ":" + c
+                }
+                cm += "\n"
+            }
+        }
+        commentLabel.text = cm
+
     }
 }
